@@ -26,5 +26,5 @@
 ### 启动
 `^_^ ~ $: npm start`
 
-### Node
+### Note
 使用前需要安装并启动`mongo`和`redis`数据库
