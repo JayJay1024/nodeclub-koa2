@@ -70,7 +70,6 @@ router.post('user/:name/delete_all', authMiddleware.adminRequired, userControlle
 router.post('user/refresh_token', authMiddleware.userRequired, userController.refreshToken);   // 刷新用户token
 
 // topic controller
-router.get('topic/:tid', topicController.index);                                           // 显示某个话题
 router.post('topic/:tid/top', authMiddleware.adminRequired, topicController.top);          // 将某话题置顶
 router.post('topic/:tid/good', authMiddleware.adminRequired, topicController.good);        // 将某话题加精
 router.post('topic/:tid/lock', authMiddleware.adminRequired, topicController.lock);        // 锁定某话题，不能再回复
@@ -81,6 +80,7 @@ router.post('topic/collect', authMiddleware.userRequired, topicController.collec
 router.post('topic/de_collect', authMiddleware.userRequired, topicController.de_collect);  // 取消关注某话题
 router.post('upload', authMiddleware.userRequired, topicController.upload);                // 上传图片
 router.get('topic/create', authMiddleware.userRequired, topicController.create);           // 新建文章页面
+router.get('topic/:tid', topicController.index);                                           // 显示某个话题
 router.post('topic/create', authMiddleware.userRequired,
     limitMiddleware.peruserperday('create_topic', config.create_post_per_day, {showJson: false}), topicController.put);  // 保存新建的文章
 

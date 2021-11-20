@@ -82,8 +82,7 @@ exports.index = async (ctx, next) => {
 };
 
 exports.create = async (ctx, next) => {
-    await ctx.render('topic/edit', {tabs: config.tabs});
-    await next();
+    return ctx.render('topic/edit', {tabs: config.tabs});
 };
 
 exports.put = async (ctx, next) => {
