@@ -23,7 +23,7 @@ const getMessageRelations = async (message) => {
         message.reply  = reply;
 
         if (!author || !topic) {
-            Relations.is_invalid = true;
+            message.is_invalid = true;
         }
         return message;
     }
