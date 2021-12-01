@@ -203,12 +203,12 @@
         });
 
         this.uploader.on('uploadSuccess', function(file, res){
-            if(res.success){
+            if(res.status){
                 self.$win.modal('hide');
 
                 var cm = self.editor.codemirror;
                 var stat = getState(cm);
-                _replaceSelection(cm, stat.image, '!['+ file.name +']('+ res.url +')');
+                _replaceSelection(cm, stat.image, '!['+ file.name +']('+ res.url.url +')');
 
             }
             else{
